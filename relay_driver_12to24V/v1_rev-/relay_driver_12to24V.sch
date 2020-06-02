@@ -1,0 +1,381 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "12V to 24V Coaxial Relay Driver"
+Date "2020-06-01"
+Rev "-"
+Comp "Amateur Radio"
+Comment1 ""
+Comment2 "creativecommons.org/licenses/by/4.0/"
+Comment3 "License: CC BY 4.0"
+Comment4 "Author: Zach Leffke, KJ4QLP"
+$EndDescr
+$Comp
+L Transistor_BJT:MMBT3906 Q2
+U 1 1 5ED5B240
+P 5800 3250
+F 0 "Q2" H 5700 3400 50  0000 L CNN
+F 1 "MMBT3906" H 5450 3500 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6000 3175 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3906.pdf" H 5800 3250 50  0001 L CNN
+	1    5800 3250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N914WT D2
+U 1 1 5ED5DF70
+P 3600 3250
+F 0 "D2" V 3646 3170 50  0000 R CNN
+F 1 "1N914WT" V 3555 3170 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3600 3075 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/149/1N4148WT-461550.pdf" H 3600 3250 50  0001 C CNN
+	1    3600 3250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 5ED5F6A0
+P 3600 2850
+F 0 "R1" H 3668 2896 50  0000 L CNN
+F 1 "10k" H 3668 2805 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 3640 2840 50  0001 C CNN
+F 3 "~" H 3600 2850 50  0001 C CNN
+	1    3600 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R3
+U 1 1 5ED601ED
+P 3600 3650
+F 0 "R3" H 3668 3696 50  0000 L CNN
+F 1 "10k" H 3668 3605 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 3640 3640 50  0001 C CNN
+F 3 "~" H 3600 3650 50  0001 C CNN
+	1    3600 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R4
+U 1 1 5ED605E1
+P 3600 4050
+F 0 "R4" H 3668 4096 50  0000 L CNN
+F 1 "100k" H 3668 4005 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 3640 4040 50  0001 C CNN
+F 3 "~" H 3600 4050 50  0001 C CNN
+	1    3600 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J2
+U 1 1 5ED61D16
+P 2600 3850
+F 0 "J2" H 2708 4131 50  0000 C CNN
+F 1 "Conn" H 2708 4040 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 2600 3850 50  0001 C CNN
+F 3 "~" H 2600 3850 50  0001 C CNN
+	1    2600 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5ED62B09
+P 3000 4050
+F 0 "#PWR02" H 3000 3800 50  0001 C CNN
+F 1 "GND" H 3005 3877 50  0000 C CNN
+F 2 "" H 3000 4050 50  0001 C CNN
+F 3 "" H 3000 4050 50  0001 C CNN
+	1    3000 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR01
+U 1 1 5ED62EC5
+P 3000 3650
+F 0 "#PWR01" H 3000 3500 50  0001 C CNN
+F 1 "+12V" H 3015 3823 50  0000 C CNN
+F 2 "" H 3000 3650 50  0001 C CNN
+F 3 "" H 3000 3650 50  0001 C CNN
+	1    3000 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 3750 3000 3750
+Wire Wire Line
+	3000 3750 3000 3650
+Wire Wire Line
+	2800 3950 3000 3950
+Wire Wire Line
+	3000 3950 3000 4050
+$Comp
+L Transistor_FET:IRLML9301 Q1
+U 1 1 5ED683DA
+P 4100 3050
+F 0 "Q1" H 4250 2850 50  0000 L CNN
+F 1 "IRLML9301" H 4250 2950 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4300 2975 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/irlml9301pbf.pdf?fileId=5546d462533600a401535668e5e42640" H 4100 3050 50  0001 L CNN
+	1    4100 3050
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	3600 3000 3600 3050
+Wire Wire Line
+	3600 3400 3600 3500
+Wire Wire Line
+	3600 3800 3600 3850
+Wire Wire Line
+	3900 3050 3600 3050
+Connection ~ 3600 3050
+Wire Wire Line
+	3600 3050 3600 3100
+Wire Wire Line
+	4200 2850 4200 2650
+Wire Wire Line
+	4200 2650 3600 2650
+Wire Wire Line
+	3600 2650 3600 2700
+$Comp
+L Diode:1N914WT D1
+U 1 1 5ED6BDFB
+P 5200 2900
+F 0 "D1" V 5246 2820 50  0000 R CNN
+F 1 "1N914WT" V 5155 2820 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5200 2725 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/149/1N4148WT-461550.pdf" H 5200 2900 50  0001 C CNN
+	1    5200 2900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Diode:1N914WT D3
+U 1 1 5ED6CDC4
+P 5200 3500
+F 0 "D3" V 5246 3420 50  0000 R CNN
+F 1 "1N914WT" V 5155 3420 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5200 3325 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/149/1N4148WT-461550.pdf" H 5200 3500 50  0001 C CNN
+	1    5200 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5ED6DAA4
+P 5200 3200
+F 0 "C2" H 5315 3246 50  0000 L CNN
+F 1 "220uF" H 5315 3155 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 5238 3050 50  0001 C CNN
+F 3 "~" H 5200 3200 50  0001 C CNN
+	1    5200 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J1
+U 1 1 5ED6EEB5
+P 4450 3900
+F 0 "J1" H 4558 4081 50  0000 C CNN
+F 1 "RELAY" H 4558 3990 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4450 3900 50  0001 C CNN
+F 3 "~" H 4450 3900 50  0001 C CNN
+	1    4450 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 4200 3600 4250
+Wire Wire Line
+	3600 4250 5200 4250
+Wire Wire Line
+	6700 4250 6700 3600
+$Comp
+L Device:C C3
+U 1 1 5ED709CA
+P 6700 3400
+F 0 "C3" H 6815 3446 50  0000 L CNN
+F 1 "470uF" H 6815 3355 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_10x10" H 6738 3250 50  0001 C CNN
+F 3 "~" H 6700 3400 50  0001 C CNN
+	1    6700 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2650 5200 2650
+Wire Wire Line
+	5200 2650 5200 2750
+Connection ~ 4200 2650
+$Comp
+L Device:R_US R2
+U 1 1 5ED73603
+P 6200 2950
+F 0 "R2" H 6268 2996 50  0000 L CNN
+F 1 "1k" H 6268 2905 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 6240 2940 50  0001 C CNN
+F 3 "~" H 6200 2950 50  0001 C CNN
+	1    6200 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2650 6200 2650
+Wire Wire Line
+	6200 2650 6200 2800
+Connection ~ 5200 2650
+Wire Wire Line
+	6000 3250 6200 3250
+Wire Wire Line
+	6200 3250 6200 3100
+Wire Wire Line
+	5700 3450 5700 3750
+Wire Wire Line
+	5700 3750 5200 3750
+Wire Wire Line
+	5200 3650 5200 3750
+Wire Wire Line
+	4650 4000 5200 4000
+Wire Wire Line
+	5200 4000 5200 4250
+Connection ~ 5200 4250
+Connection ~ 5200 3050
+Wire Wire Line
+	6200 2650 6700 2650
+Wire Wire Line
+	6700 2650 6700 3200
+Connection ~ 6200 2650
+Wire Wire Line
+	5200 3350 4700 3350
+Wire Wire Line
+	4200 3350 4200 3250
+Connection ~ 5200 3350
+Wire Wire Line
+	5700 3050 5200 3050
+$Comp
+L power:+12V #PWR03
+U 1 1 5ED842E4
+P 5200 2550
+F 0 "#PWR03" H 5200 2400 50  0001 C CNN
+F 1 "+12V" H 5215 2723 50  0000 C CNN
+F 2 "" H 5200 2550 50  0001 C CNN
+F 3 "" H 5200 2550 50  0001 C CNN
+	1    5200 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5ED8480E
+P 5200 4350
+F 0 "#PWR04" H 5200 4100 50  0001 C CNN
+F 1 "GND" H 5205 4177 50  0000 C CNN
+F 2 "" H 5200 4350 50  0001 C CNN
+F 3 "" H 5200 4350 50  0001 C CNN
+	1    5200 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2550 5200 2650
+Wire Wire Line
+	5200 4350 5200 4250
+Connection ~ 3600 3850
+Wire Wire Line
+	3600 3850 3600 3900
+$Comp
+L Device:C C4
+U 1 1 5EDB483B
+P 7200 3400
+F 0 "C4" H 7315 3446 50  0000 L CNN
+F 1 "DNP" H 7315 3355 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 7238 3250 50  0001 C CNN
+F 3 "~" H 7200 3400 50  0001 C CNN
+	1    7200 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 3250 7200 3200
+Wire Wire Line
+	7200 3200 6700 3200
+Connection ~ 6700 3200
+Wire Wire Line
+	6700 3200 6700 3250
+Wire Wire Line
+	7200 3550 7200 3600
+Wire Wire Line
+	7200 3600 6700 3600
+Connection ~ 6700 3600
+Wire Wire Line
+	6700 3600 6700 3550
+$Comp
+L Device:C C1
+U 1 1 5EDB70B1
+P 4700 3200
+F 0 "C1" H 4815 3246 50  0000 L CNN
+F 1 "DNP" H 4815 3155 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_8x10.5" H 4738 3050 50  0001 C CNN
+F 3 "~" H 4700 3200 50  0001 C CNN
+	1    4700 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4250 6700 4250
+Connection ~ 4700 3350
+Wire Wire Line
+	4700 3350 4200 3350
+Wire Wire Line
+	4700 3050 5200 3050
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 5EDE6209
+P 8150 3250
+F 0 "H1" V 8104 3400 50  0000 L CNN
+F 1 "MountingHole_Pad" V 8195 3400 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 8150 3250 50  0001 C CNN
+F 3 "~" H 8150 3250 50  0001 C CNN
+	1    8150 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 5EDE6D72
+P 8150 3500
+F 0 "H2" V 8104 3650 50  0000 L CNN
+F 1 "MountingHole_Pad" V 8195 3650 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm_Pad_Via" H 8150 3500 50  0001 C CNN
+F 3 "~" H 8150 3500 50  0001 C CNN
+	1    8150 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5EDE70D5
+P 7950 3600
+F 0 "#PWR05" H 7950 3350 50  0001 C CNN
+F 1 "GND" H 7955 3427 50  0000 C CNN
+F 2 "" H 7950 3600 50  0001 C CNN
+F 3 "" H 7950 3600 50  0001 C CNN
+	1    7950 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 3250 7950 3250
+Wire Wire Line
+	7950 3250 7950 3500
+Wire Wire Line
+	8050 3500 7950 3500
+Connection ~ 7950 3500
+Wire Wire Line
+	7950 3500 7950 3600
+Text Notes 2500 4700 0    79   ~ 0
+C1/C2 = single 220uF Capacitor.  Two in schematic for both SMD and THT PCB footprints overlaid.
+Text Notes 2500 4850 0    79   ~ 0
+C3/C4 = single 470uF-1000uF Capacitor.  Two in schematic for both SMD and THT PCB footprints overlaid.
+Wire Wire Line
+	4650 3900 5200 3900
+Wire Wire Line
+	5200 3900 5200 3750
+Connection ~ 5200 3750
+Text Label 4700 3900 0    50   ~ 0
+REL_COIL_A
+Text Label 4700 4000 0    50   ~ 0
+REL_COIL_B
+Wire Wire Line
+	2800 3850 3600 3850
+Text Label 3250 3850 0    50   ~ 0
+~PTT
+$EndSCHEMATC
